@@ -321,7 +321,7 @@ class Level_One(QMainWindow):
                                                                 font: 14pt \"MS Shell Dlg 2\";
                                                                 background-color: rgb(255, 85, 85);}
                                                            QPushButton:hover {background-color: rgb(188, 0, 0);} """)
-        button_size = 10git remote add origin0
+        button_size = 100
         self.delete_letter_button.setGeometry(self.width() - button_size - 20, self.height() - button_size - 20, button_size, button_size)
         self.delete_letter_button.show()
 
