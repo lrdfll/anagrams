@@ -291,7 +291,7 @@ class Level_One(QMainWindow):
         button_size = 190
         button_spacing = 50  # Расстояние между кнопками
         start_x = (self.width() - 3 * button_size - 2 * button_spacing) // 2
-        start_y = (self.height() + text_field_height) // 3  # Позиция под текстовым полем
+        start_y = (self.height() + text_field_height) // 2  # Позиция под текстовым полем
 
         buttons = [self.first_button, self.second_button, self.third_button]
         for i, button in enumerate(buttons):
@@ -403,7 +403,7 @@ class Level_Two(QMainWindow):
         button_spacing = 50  # Расстояние между кнопками
         total_width = 4 * button_size + 3 * button_spacing
         start_x = (self.width() - total_width) // 2
-        start_y = (self.height() + text_field_height) // 3  # Позиция под текстовым полем
+        start_y = (self.height() + text_field_height) // 2  # Позиция под текстовым полем
 
         self.buttons = [self.first_button, self.second_button, self.third_button, self.fourth_button]
         for i, button in enumerate(self.buttons):
@@ -527,7 +527,7 @@ class Level_Three(QMainWindow):
         button_size = 190
         button_spacing = 50  # Расстояние между кнопками
         start_x = (self.width() - 5 * button_size - 4 * button_spacing) // 2
-        start_y = (self.height() + text_field_height) // 3  # Позиция под текстовым полем
+        start_y = (self.height() + text_field_height) // 2  # Позиция под текстовым полем
 
         buttons = [self.first_button, self.second_button, self.third_button, self.fourth_button, self.fifth_button]
         self.buttons = buttons  # Сохраняем кнопки в атрибут класса
