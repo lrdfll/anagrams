@@ -41,10 +41,10 @@ class MainWindow(QMainWindow):
 
         # Добавление кнопки начала игры
         self.beginning = QPushButton('Играть', self)
-        button_width = 300
-        button_height = 75
+        button_width = 350
+        button_height = 95
         button_x = (self.width() - button_width) // 2
-        button_y = (self.height() - button_height) // 2 - 85  # Положение над кнопкой "Руководство игры"
+        button_y = (self.height() - button_height) // 2 - 105  # Положение над кнопкой "Руководство игры"
         self.beginning.setGeometry(button_x, button_y, button_width, button_height)
         self.beginning.setStyleSheet("""QPushButton {color: rgb(255, 255, 255);
                                             font: 75 14pt "MS Shell Dlg 2";
@@ -66,7 +66,7 @@ class MainWindow(QMainWindow):
 
         # Добавление кнопки завершения игры
         self.end = QPushButton('Выход', self)
-        button_y = (self.height() - button_height) // 2 + 85  # Положение под кнопкой "Руководство игры"
+        button_y = (self.height() - button_height) // 2 + 105  # Положение под кнопкой "Руководство игры"
         self.end.setGeometry(button_x, button_y, button_width, button_height)
         self.end.setStyleSheet("""QPushButton {color: rgb(255, 255, 255);
                                         font: 75 14pt \"MS Shell Dlg 2\";
@@ -77,7 +77,7 @@ class MainWindow(QMainWindow):
 
         # Добавление кнопки музыки
         self.music_button = QPushButton('🔉' if music_playing else '🔇', self)
-        button_size = 90
+        button_size = 150
         button_x = 20  # Отступ от левого края
         button_y = self.height() - button_size - 20  # Отступ от нижнего края
         self.music_button.setGeometry(button_x, button_y, button_size, button_size)
@@ -156,7 +156,7 @@ class Rules_Window(QMainWindow):
              background-color: rgb(125, 125, 188);
          }""")
         # Устанавливаем абсолютные координаты для кнопки
-        self.close_the_rules.setGeometry(20, self.height() - 110, 90, 90)
+        self.close_the_rules.setGeometry(20, self.height() - 160, 150, 150)
         self.close_the_rules.show()
         self.close_the_rules.clicked.connect(self.return_main)  # Подключение кнопки к функции return_main
 
@@ -186,10 +186,11 @@ class LevelWindow(QMainWindow):
         self.label.setGeometry(label_x, label_y, label_width, label_height)
         self.label.setStyleSheet("font: 75 24pt \"Studio Var\";\n"
                                       "color: rgb(85, 0, 127);")
+        self.label.setAlignment(Qt.AlignCenter)
         self.label.show()
 
-        button_width = 170
-        button_height = 170
+        button_width = 190
+        button_height = 190
         button_spacing = 50  # Расстояние между кнопками
 
         # Расчет координат для центрирования кнопок
@@ -235,7 +236,7 @@ class LevelWindow(QMainWindow):
             background-color: rgb(125, 125, 188);
         }""")
         # Устанавливаем абсолютные координаты для кнопки
-        self.close_the_levels.setGeometry(20, self.height() - 110, 90, 90)
+        self.close_the_levels.setGeometry(20, self.height() - 160, 150, 150)
         self.close_the_levels.show()
         self.close_the_levels.clicked.connect(self.close)  # Подключение кнопки к функции return_main
     def level_one(self):
@@ -287,10 +288,10 @@ class Level_One(QMainWindow):
         self.third_button.clicked.connect(lambda: self.add_letter(self.third_button.text()))
 
         # Стилизация кнопок
-        button_size = 150
+        button_size = 190
         button_spacing = 50  # Расстояние между кнопками
         start_x = (self.width() - 3 * button_size - 2 * button_spacing) // 2
-        start_y = (self.height() + text_field_height) // 2  # Позиция под текстовым полем
+        start_y = (self.height() + text_field_height) // 3  # Позиция под текстовым полем
 
         buttons = [self.first_button, self.second_button, self.third_button]
         for i, button in enumerate(buttons):
@@ -310,8 +311,8 @@ class Level_One(QMainWindow):
                                                                font: 14pt \"MS Shell Dlg 2\";
                                                                background-color: rgb(170, 170, 255);}
                                                           QPushButton:hover {background-color: rgb(125, 125, 188);} """)
-        button_size = 90
-        self.close_level_one_button.setGeometry(20, self.height() - button_size - 20, button_size, button_size)
+        button_size = 150
+        self.close_level_one_button.setGeometry(20, self.height() - button_size - 10, button_size, button_size)
         self.close_level_one_button.show()
 
         # Добавляем кнопку для удаления последней введенной буквы
@@ -321,7 +322,7 @@ class Level_One(QMainWindow):
                                                                 font: 14pt \"MS Shell Dlg 2\";
                                                                 background-color: rgb(255, 85, 85);}
                                                            QPushButton:hover {background-color: rgb(188, 0, 0);} """)
-        button_size = 100
+        button_size = 150
         self.delete_letter_button.setGeometry(self.width() - button_size - 20, self.height() - button_size - 20, button_size, button_size)
         self.delete_letter_button.show()
 
@@ -398,11 +399,11 @@ class Level_Two(QMainWindow):
         self.fourth_button.clicked.connect(lambda: self.add_letter(self.fourth_button))
 
         # Стилизация кнопок
-        button_size = 150
+        button_size = 190
         button_spacing = 50  # Расстояние между кнопками
         total_width = 4 * button_size + 3 * button_spacing
         start_x = (self.width() - total_width) // 2
-        start_y = (self.height() + text_field_height) // 2  # Позиция под текстовым полем
+        start_y = (self.height() + text_field_height) // 3  # Позиция под текстовым полем
 
         self.buttons = [self.first_button, self.second_button, self.third_button, self.fourth_button]
         for i, button in enumerate(self.buttons):
@@ -422,8 +423,8 @@ class Level_Two(QMainWindow):
                                                                font: 14pt \"MS Shell Dlg 2\";
                                                                background-color: rgb(170, 170, 255);}
                                                           QPushButton:hover {background-color: rgb(125, 125, 188);} """)
-        button_size = 90
-        self.close_level_one_button.setGeometry(20, self.height() - button_size - 20, button_size, button_size)
+        button_size = 150
+        self.close_level_one_button.setGeometry(20, self.height() - button_size - 10, button_size, button_size)
         self.close_level_one_button.show()
 
         # Добавляем кнопку для удаления последней введенной буквы
@@ -433,7 +434,7 @@ class Level_Two(QMainWindow):
                                                                 font: 14pt \"MS Shell Dlg 2\";
                                                                 background-color: rgb(255, 85, 85);}
                                                            QPushButton:hover {background-color: rgb(188, 0, 0);} """)
-        button_size = 100
+        button_size = 150
         self.delete_letter_button.setGeometry(self.width() - button_size - 20, self.height() - button_size - 20, button_size, button_size)
         self.delete_letter_button.show()
 
@@ -523,10 +524,10 @@ class Level_Three(QMainWindow):
         self.fifth_button.clicked.connect(lambda: self.add_letter(self.fifth_button.text(), 4))
 
         # Стилизация кнопок
-        button_size = 150
+        button_size = 190
         button_spacing = 50  # Расстояние между кнопками
         start_x = (self.width() - 5 * button_size - 4 * button_spacing) // 2
-        start_y = (self.height() + text_field_height) // 2  # Позиция под текстовым полем
+        start_y = (self.height() + text_field_height) // 3  # Позиция под текстовым полем
 
         buttons = [self.first_button, self.second_button, self.third_button, self.fourth_button, self.fifth_button]
         self.buttons = buttons  # Сохраняем кнопки в атрибут класса
@@ -547,8 +548,8 @@ class Level_Three(QMainWindow):
                                                                font: 14pt \"MS Shell Dlg 2\";
                                                                background-color: rgb(170, 170, 255);}
                                                           QPushButton:hover {background-color: rgb(125, 125, 188);} """)
-        button_size = 90
-        self.close_level_one_button.setGeometry(20, self.height() - button_size - 20, button_size, button_size)
+        button_size = 150
+        self.close_level_one_button.setGeometry(20, self.height() - button_size - 10, button_size, button_size)
         self.close_level_one_button.show()
 
         # Добавляем кнопку для удаления последней введенной буквы
@@ -558,7 +559,7 @@ class Level_Three(QMainWindow):
                                                                 font: 14pt \"MS Shell Dlg 2\";
                                                                 background-color: rgb(255, 85, 85);}
                                                            QPushButton:hover {background-color: rgb(188, 0, 0);} """)
-        button_size = 100
+        button_size = 150
         self.delete_letter_button.setGeometry(self.width() - button_size - 20, self.height() - button_size - 20, button_size, button_size)
         self.delete_letter_button.show()
 
@@ -622,12 +623,14 @@ class Victory_Window(QMainWindow):
         self.label.setScaledContents(True)
         self.setCentralWidget(self.label)
 
-        # Добавляем надпись "Победа"
+        # Добавляем надпись "Победа".
         self.victory_label = QLabel("Победа!", self)
         self.victory_label.setStyleSheet("font: 75 56pt \"Studio Var\";\n"
                                          "color: rgb(85, 0, 127);")
         self.victory_label.setAlignment(Qt.AlignCenter)  # Выравнивание текста по центру
-        self.victory_label.setGeometry((self.width() - 270) // 2, (self.height() - 80) // 2 - 100, 300, 100)
+        # Измените координаты для надписи "Победа!"
+        self.victory_label.setGeometry((self.width() - 200) // 2 - 115, (self.height() - 70) // 2 - 150, 450, 160)
+
         self.victory_label.show()
 
         # Создаем кнопку "На главное меню"
@@ -636,11 +639,11 @@ class Victory_Window(QMainWindow):
                                         font: 14pt \"MS Shell Dlg 2\";
                                         background-color: rgba(235, 146, 147, 0.8);}
                                         QPushButton:hover {background-color: rgba(129, 80, 81, 0.8);} """)
-        self.forever.resize(350, 50)
+        self.forever.resize(350, 90)
         self.forever.clicked.connect(self.level_selection_Window)
 
         # Устанавливаем позицию кнопки
-        self.forever.move((self.width() - self.forever.width()) // 2, (self.height() - self.forever.height()) // 2 + 20)
+        self.forever.move((self.width() - self.forever.width()) // 2, (self.height() - self.forever.height()) // 2 + 30)
         self.forever.show()
     def level_selection_Window(self):
         self.main_window = MainWindow()
