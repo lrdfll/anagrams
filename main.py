@@ -29,8 +29,8 @@ class MainWindow(QMainWindow):
 
         # добавление заголовка игры
         self.title = QLabel("Анаграммы", self)
-        title_width = 260
-        title_height = 60
+        title_width = 350
+        title_height = 80
         title_x = (self.width() - title_width) // 2
         title_y = (self.height() - title_height) // 2 - 200  # Положение над кнопками
         self.title.setGeometry(title_x, title_y, title_width, title_height)
@@ -144,13 +144,19 @@ class Rules_Window(QMainWindow):
         self.label.setStyleSheet("font: 75 17pt \"Studio Var\";\n"
                                  "color: rgb(85, 0, 127);")
         self.label.show()
+
         # Создаем кнопку для возврата к основному окну
         self.close_the_rules = QPushButton('<', self)
-        self.close_the_rules.setStyleSheet("""QPushButton {color: rgb(255, 255, 255);
-                                                font: 14pt \"MS Shell Dlg 2\";
-                                                background-color: rgb(170, 170, 255);}
-                                                QPushButton:hover {background-color: rgb(125, 125, 188);} """)
-        self.close_the_rules.setGeometry(20, 650, 90, 90)
+        self.close_the_rules.setStyleSheet("""QPushButton {
+             color: rgb(255, 255, 255);
+             font: 14pt \"MS Shell Dlg 2\";
+             background-color: rgb(170, 170, 255);
+         }
+         QPushButton:hover {
+             background-color: rgb(125, 125, 188);
+         }""")
+        # Устанавливаем абсолютные координаты для кнопки
+        self.close_the_rules.setGeometry(20, self.height() - 110, 90, 90)
         self.close_the_rules.show()
         self.close_the_rules.clicked.connect(self.return_main)  # Подключение кнопки к функции return_main
 
@@ -171,7 +177,7 @@ class LevelWindow(QMainWindow):
         self.setCentralWidget(self.label)
 
         # Размеры и положение надписи
-        label_width = 300
+        label_width = 400
         label_height = 100
         label_x = (self.width() - label_width) // 2
         label_y = (self.height() - label_height) // 2 - 150  # Положение над кнопками
@@ -220,14 +226,18 @@ class LevelWindow(QMainWindow):
 
         # Создаем кнопку для возврата к основному окну
         self.close_the_levels = QPushButton('<', self)
-        self.close_the_levels.setStyleSheet("""QPushButton {color: rgb(255, 255, 255);
-                                                font: 14pt \"MS Shell Dlg 2\";
-                                                background-color: rgb(170, 170, 255);}
-                                                QPushButton:hover {background-color: rgb(125, 125, 188);} """)
-        self.close_the_levels.setGeometry(20, 650, 90, 90)
+        self.close_the_levels.setStyleSheet("""QPushButton {
+            color: rgb(255, 255, 255);
+            font: 14pt \"MS Shell Dlg 2\";
+            background-color: rgb(170, 170, 255);
+        }
+        QPushButton:hover {
+            background-color: rgb(125, 125, 188);
+        }""")
+        # Устанавливаем абсолютные координаты для кнопки
+        self.close_the_levels.setGeometry(20, self.height() - 110, 90, 90)
         self.close_the_levels.show()
         self.close_the_levels.clicked.connect(self.close)  # Подключение кнопки к функции return_main
-
     def level_one(self):
         self.level_one_window = Level_One()
         self.setCentralWidget(self.level_one_window)
@@ -311,7 +321,7 @@ class Level_One(QMainWindow):
                                                                 font: 14pt \"MS Shell Dlg 2\";
                                                                 background-color: rgb(255, 85, 85);}
                                                            QPushButton:hover {background-color: rgb(188, 0, 0);} """)
-        button_size = 90
+        button_size = 10git remote add origin0
         self.delete_letter_button.setGeometry(self.width() - button_size - 20, self.height() - button_size - 20, button_size, button_size)
         self.delete_letter_button.show()
 
@@ -423,7 +433,7 @@ class Level_Two(QMainWindow):
                                                                 font: 14pt \"MS Shell Dlg 2\";
                                                                 background-color: rgb(255, 85, 85);}
                                                            QPushButton:hover {background-color: rgb(188, 0, 0);} """)
-        button_size = 90
+        button_size = 100
         self.delete_letter_button.setGeometry(self.width() - button_size - 20, self.height() - button_size - 20, button_size, button_size)
         self.delete_letter_button.show()
 
@@ -548,7 +558,7 @@ class Level_Three(QMainWindow):
                                                                 font: 14pt \"MS Shell Dlg 2\";
                                                                 background-color: rgb(255, 85, 85);}
                                                            QPushButton:hover {background-color: rgb(188, 0, 0);} """)
-        button_size = 90
+        button_size = 100
         self.delete_letter_button.setGeometry(self.width() - button_size - 20, self.height() - button_size - 20, button_size, button_size)
         self.delete_letter_button.show()
 
@@ -617,7 +627,7 @@ class Victory_Window(QMainWindow):
         self.victory_label.setStyleSheet("font: 75 56pt \"Studio Var\";\n"
                                          "color: rgb(85, 0, 127);")
         self.victory_label.setAlignment(Qt.AlignCenter)  # Выравнивание текста по центру
-        self.victory_label.setGeometry((self.width() - 270) // 2, (self.height() - 80) // 2 - 100, 270, 80)
+        self.victory_label.setGeometry((self.width() - 270) // 2, (self.height() - 80) // 2 - 100, 300, 100)
         self.victory_label.show()
 
         # Создаем кнопку "На главное меню"
