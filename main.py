@@ -125,10 +125,10 @@ class Rules_Window(QMainWindow):  # Класс окна правил
         self.setCentralWidget(self.label)  # Установка метки как центрального виджета
 
         # Настройка текстового поля
-        text_field_width = 740
-        text_field_height = 500
+        text_field_width = 800
+        text_field_height = 700
         text_field_x = (self.width() - text_field_width) // 2
-        text_field_y = (self.height() - text_field_height) // 2
+        text_field_y = (self.height() - text_field_height) // 3
 
         # Текст правил
         self.label = QLabel("""
